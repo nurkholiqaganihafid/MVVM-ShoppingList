@@ -9,6 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.MVVMShoppingList">
+<!--        android:name=".ShoppingApplication"-->
         <activity
             android:name=".ui.shoppinglist.ShoppingActivity"
             android:exported="true">

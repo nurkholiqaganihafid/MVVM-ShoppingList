@@ -11,12 +11,19 @@ import com.nurkholiq.mvvm_shoppinglist.data.db.entities.ShoppingItem
 import com.nurkholiq.mvvm_shoppinglist.data.repositories.ShoppingRepository
 import com.nurkholiq.mvvm_shoppinglist.other.ShoppingItemAdapter
 import kotlinx.android.synthetic.main.activity_shopping.*
+import org.kodein.di.KodeinAware
+import org.kodein.di.generic.instance
 
-class ShoppingActivity : AppCompatActivity() {
+class ShoppingActivity : AppCompatActivity(){ // not solved when using KodeinAware
+
+//    override val kodein by kodein()
+//    private val factory: ShoppingViewModelFactory by instance()
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_shopping)
 
+        // in the comments for using codeine
         val database = ShoppingDatabase(this)
         val repository = ShoppingRepository(database)
         val factory = ShoppingViewModelFactory(repository)
